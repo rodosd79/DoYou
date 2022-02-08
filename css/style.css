@@ -1,26 +1,148 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@700");
-body { font-family: "Manrope", sans-serif !important; font-weight: 700 !important; }
+body {
+  font-family: "Manrope", sans-serif !important;
+  font-weight: 700 !important;
+}
 
-.Header { backdrop-filter: blur(12px); background-color: rgba(0, 0, 0, 0.7); border-bottom: 1.4px solid #00d863; color: white; }
+button:focus {
+  outline: none !important;
+}
 
-.Header nav .nav-link, .Header nav .drophover { color: inherit; }
+.Header {
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-bottom: 1.4px solid #00d863;
+  color: white;
+  max-height: max-content;
+}
 
-.Header nav .nav-link:hover, .Header nav .drophover:hover { color: #00d863; border-bottom: #00d863 solid 0.8px; }
+.Header nav .nav-link, .Header nav .drophover {
+  color: inherit;
+}
 
-.Header .DoYou { font-size: 2.2rem; }
+.Header nav .nav-link:hover, .Header nav .drophover:hover {
+  color: #00d863;
+  border-bottom: #00d863 solid 0.8px;
+}
 
-.Header .DoYou:hover { color: #00d863; }
+.Header .DoYou {
+  font-size: 2em;
+}
 
-.DoYou { color: #00d863; }
+.Header .DoYou:hover {
+  color: #00d863;
+}
 
-.g1 .h4 { font-size: 2.25rem; }
+.Header2 {
+  backdrop-filter: blur(12px);
+  background-color: rgba(4, 94, 16, 0.78);
+  color: white;
+  width: 320px;
+  z-index: 9999;
+  border-right: 1.3px solid #33ff00;
+}
 
-.myBtn { background-color: #00d863 !important; border-radius: 1.5rem !important; border: #00d863 !important; color: #030229 !important; }
+.Header2 aside {
+  overflow: auto;
+  border-right-width: 1px;
+}
 
-.myBtn:hover { background-color: #02b455 !important; }
+.Header2 nav .nav-link, .Header2 nav .drophover {
+  color: inherit;
+}
 
-.dropdown:hover > .dropdown-menu { display: block; }
+.Header2 nav .nav-link:hover, .Header2 nav .drophover:hover {
+  color: #00d863;
+  border-bottom: #00d863 solid 0.8px;
+}
 
-.dropdown-perso { color: #00d863 !important; }
+.Header2 .myBtn {
+  background-color: #030229 !important;
+  border-radius: 1.38rem !important;
+  border: #030229 !important;
+  color: #00d863 !important;
+}
 
-.dropdown-perso:hover { color: white !important; background-color: #00d863 !important; }
+.Header2 .myBtn:hover {
+  background-color: #00d863 !important;
+  color: #030229 !important;
+  border: none !important;
+  box-shadow: 0 0 50px;
+}
+
+.Header3 {
+  background-color: #01ee7083;
+}
+
+.Header3 .but {
+  background: transparent;
+  color: #00d863;
+  font-size: 3rem;
+}
+
+.DoYou {
+  color: #00d863;
+}
+
+.myBtn {
+  background-color: #00d863 !important;
+  border-radius: 1.38rem !important;
+  border: #00d863 !important;
+  color: #030229 !important;
+}
+
+.myBtn:hover {
+  background-color: #343a40 !important;
+  color: #00d863 !important;
+  border: none !important;
+  box-shadow: 0 0 50px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-perso {
+  color: #00d863 !important;
+}
+
+.dropdown-perso:hover {
+  color: white !important;
+  background-color: #00d863 !important;
+}
+
+.borda-bot {
+  border-bottom: solid 1px;
+}
+
+.bgDoYou {
+  background-color: #00d863;
+  box-shadow: 0px 2px 16px #02aa51ad;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.bg-home {
+  background-color: rgba(2, 170, 81, 0.1);
+  backdrop-filter: blur(12px);
+  z-index: 9997;
+  position: fixed;
+}
+
+.over-auto {
+  overflow: auto;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+
+.g1 .h4 {
+  font-size: 2.25rem;
+}
