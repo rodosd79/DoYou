@@ -1,0 +1,9 @@
+.relatorio h1, .relatorio h2, .relatorio h3, .relatorio h4, .relatorio h5, .relatorio h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.relatorio .relat-item {
+  border: solid 0.5px #00d863;
+  border-left: solid 6px #00d863;
+}

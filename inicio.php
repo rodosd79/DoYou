@@ -9,7 +9,7 @@ require_once "db/db_inicio.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoYou | Relatórios</title>
     <!-- DoYou style -->
-    <link rel="stylesheet" href="assets/css/style-inicio.css">
+    <link rel="stylesheet" href="assets/css/style_inicio.css">
     <link rel="stylesheet" href="assets/css/style_header.css">
 
     <!-- Bootstrap -->
@@ -25,10 +25,14 @@ require_once "db/db_inicio.php";
         }
         ?>
     <!--  -->
-    
-    <h4 class="ml-4 pl-1 w-100"> <strong class="DoYou"> Saldo: R$ </strong><?php echo $saldo; ?></h4>
 
-    <div></div>
+    <div class="d-flex py-2 mx-lg-4 relatorio">
+        <div class="d-inline-block p-2 pr-4 relat-item">
+            <h5 class="mb-0"> <strong class="DoYou">Saldo:</strong></h5>
+            <h4>R$ <?php echo $saldo; ?></h4>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <!-- Footer -->
         <?php include_once "footer.php" ?>

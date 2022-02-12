@@ -137,3 +137,8 @@ footer.footer .rede-social, footer.footer .rede-social:hover {
   text-decoration: none;
   color: #030229;
 }
+
+.sub-header {
+  background-color: white;
+  border-bottom: solid 1px #00d863;
+}
