@@ -1,3 +1,9 @@
+<?php
+require_once "db/verificar_login.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,18 +23,18 @@
 	<div class="container">
 		<div class="forms-container">
 			<div class="cadastro-usuario">
-			<form action="#" class="cadastro-form">
+			<form method="POST" class="cadastro-form">
 			<h2 class="title">Login</h2>
 		
 			<div class="input-field">
 				<i class="bi bi-envelope-fill"></i>
-			<input type="email" placeholder="Email" />
+			<input type="email" name="email" placeholder="Email" />
 			</div>
 			<div class="input-field">
 				<i class="bi bi-lock-fill"></i>
-			<input type="password" placeholder="Senha" />
+			<input type="password" name="senha" placeholder="Senha" />
 			</div>
-			<input class="btn mb-10" type="submit" value="Entrar" />
+			<input class="btn mb-10" type="submit" name="logar" value="Entrar"/>
 			
 			
 			<small class="text-muted">Ainda não possui conta?</small>

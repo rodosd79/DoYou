@@ -1,3 +1,7 @@
+<?php
+	require_once "db/cadastrar_usuario.php"?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,25 +18,25 @@
 	<div class="container">
 		<div class="forms-container">
 			<div class="cadastro-usuario">
-			<form action="#" class="cadastro-form">
+			<form method="POST" class="cadastro-form">
 			<h2 class="title">Cadastro</h2>
 			<div class="input-field">
 			<i class="bi bi-person-circle"></i>
-			<input type="text" placeholder="Nome Completo" />
+			<input type="text" name="nome" placeholder="Nome Completo" required/>
 			</div>
 			<div class="input-field">
 				<i class="bi bi-envelope-fill"></i>
-			<input type="email" placeholder="Email" />
+			<input type="email" name="email" placeholder="Email" required/>
 			</div>
 			<div class="input-field">
 				<i class="bi bi-lock-fill"></i>
-			<input type="password" placeholder="Senha" />
+			<input type="password" name="senha" id="senha" placeholder="Senha"  />
 			</div>
 			<div class="input-field">
 				<i class="bi bi-shield-fill-check"></i>
-			<input type="password" placeholder="Confirme sua Senha" />
+			<input type="password" id="senha2" placeholder="Confirme sua Senha"  />
 			</div>
-			<input class="btn" type="submit" value="Cadastra-se" />
+			<input class="btn" type="submit" name="novo_usuario" value="Cadastrar-se" />
 			</div>
 			</form>
 			

@@ -1,3 +1,9 @@
+<?php
+require_once "db/conexao.php";
+
+session_start();
+?>
+
 <header class="navbar navbar-expand-md sticky-top Header px-4 justify-content-between">
     <div class="navbar-brand flex-shrink-1">
         <a href="#" class="Header-title px-2">DoYou</a>
@@ -20,5 +26,11 @@
                 </a>
             </div>
         </div>
+        <?php if(isset($_SESSION["nome"])) { ?>
+        <div class="navbar-brand">Olá <?php echo $_SESSION["nome"] ?></div>
+          <small><a class="nav-link" href="db/logout.php">Sair</a></small>
+         <?php } else { ?>
+          <a class="nav-link" href="login.php">Login</a>
+         <?php } ?>
     </nav>
 </header>

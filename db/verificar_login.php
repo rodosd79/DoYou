@@ -6,10 +6,10 @@ session_start();
 if(isset($_REQUEST['logar'])){
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
-
+    
     //consulta ao banco de dados e validação
 
-    $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+    $query = "SELECT * FROM usuario WHERE email = '{$email}' AND senha = '{$senha}'";
     $result = mysqli_query($conn, $query);
 
     //verificação de resultado
@@ -25,6 +25,6 @@ if(isset($_REQUEST['logar'])){
 
     } else {
         
-        header('location:login.php?erro=1');
+        header('location:login.php?erro={$email}');
     }
 }
