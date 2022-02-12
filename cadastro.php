@@ -16,10 +16,19 @@
 </head>
 <body>
 	<div class="container">
+		
 		<div class="forms-container">
+		
 			<div class="cadastro-usuario">
 			<form method="POST" class="cadastro-form">
 			<h2 class="title">Cadastro</h2>
+			<!-- Se o email estiver cadastrado -->
+				<?php if(isset($_GET['cad'])) { ?>
+				<div class="alert alert-danger">
+					Email já cadastrado
+				</div>
+			<!--  -->
+			<?php } ?>
 			<div class="input-field">
 			<i class="bi bi-person-circle"></i>
 			<input type="text" name="nome" placeholder="Nome Completo" required/>
