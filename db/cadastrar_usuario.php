@@ -20,6 +20,7 @@
 
             session_start();
             $_SESSION['nome'] = $nome;
+            $_SESSION['email'] = $email;
 
             header("Location: inicio.php");
 
