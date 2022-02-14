@@ -6,15 +6,24 @@ session_start();
 
 <header class="navbar navbar-expand-md sticky-top Header px-4 justify-content-between bg-dark">
     <div class="navbar-brand flex-shrink-1">
-        <a href="#" class="Header-title px-2">DoYou</a>
+        <a href="index.php" class="Header-title px-2">DoYou</a>
     </div>
     <nav class="navbar-nav d-flex justify-content-end flex-grow-1 p-1">
-        <div class="row justify-content-end">
-            <div class="nav-item p-1">
-                <a href="login.php" data-toggle="tooltip" data-placement="bottom" title="Criar conta/Entrar">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"/></svg>
-                </a>
-            </div>
+            <div class="row justify-content-end">
+                <?php if(isset($_SESSION["nome"])) { ?>
+                     <div class="navbar-brand text-white">Olá <?php echo $_SESSION["nome"] ?>
+                    <small><a class="nav-link" href="db/logout.php">Sair</a></small>
+          
+                    </div>
+                    <?php } else { ?>
+          
+                    <div class="nav-item p-1">
+                        <a href="login.php" data-toggle="tooltip" data-placement="bottom" title="Criar conta/Entrar">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.07 18.28c.43-.9 3.05-1.78 4.93-1.78s4.51.88 4.93 1.78C15.57 19.36 13.86 20 12 20s-3.57-.64-4.93-1.72zm11.29-1.45c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"/></svg>
+                        </a>
+                    </div>
+                <?php } ?>
+
             <div class="nav-item p-1">
                 <a href="blog.php" data-toggle="tooltip" data-placement="bottom" title="Notícias e Dicas">
                 <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>
@@ -26,11 +35,6 @@ session_start();
                 </a>
             </div>
         </div>
-        <?php if(isset($_SESSION["nome"])) { ?>
-        <div class="navbar-brand">Olá <?php echo $_SESSION["nome"] ?></div>
-          <small><a class="nav-link" href="db/logout.php">Sair</a></small>
-         <?php } else { ?>
-          <a class="nav-link" href="login.php">Login</a>
-         <?php } ?>
+        
     </nav>
 </header>

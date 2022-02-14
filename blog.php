@@ -23,9 +23,14 @@
   <body>
     <?php include_once "header.php"?>
 
-    <div class="container mt-5 bg-light">
+    <div class="container-fluid bg-success text-center py-1">
+        <h3>Blog de notícias e dicas sobre finanças</h3>
+    </div>
 
- 
+    
+
+    <div class="container mb-5 bg-light">
+
 
         <!--Mostrar posts do banco de dados-->
         <div class="row">
@@ -35,8 +40,8 @@
                        <img src="<?php echo $q['imagem']?>" class="card-img-top" alt="<?php echo $q['alt_img']?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $q['titulo'];?></h5>
-                            <p class="card-text"><?php echo substr($q['conteudo'],0,50);?>...</p>
-                            <p class="card-text"><small class="text-muted"><?php echo $q['data_p'];?></small></p>
+                            <!--<p class="card-text"><small><?php echo substr($q['conteudo'],0,60);?>...</small></p>-->
+                            <p class="card-text"><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p'];?></small></p>
                             <a href="blog_post.php?id=<?php echo $q['idPost']?>" class="btn btn-light">Leia mais<span class="text-danger">&rarr;</span></a>
                         </div>
                      </div>

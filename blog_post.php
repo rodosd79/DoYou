@@ -23,15 +23,24 @@
     <div class="container mt-5">
        <?php foreach($query as $q){ ?>
 
-        <img src="<?php echo $q['imagem']?>" style="width:90vw;"> 
-           <div class="bg-dark p-5 rounded-lg text-white text-center">
-             <h1><?php echo $q['titulo']; ?></h1>
-             <p class="text-right"><small class="text-muted"><?php echo $q['data_p'];?></small></p>
+        
+        <div class="bg-dark p-5 mx-auto rounded-lg text-white text-center">
+            <img src="<?php echo $q['imagem']?>" style="width:50vw;"> 
+             <h3 class="mt-3"><?php echo $q['titulo']; ?></h3>
+             <div class="mt-3">
+                <p><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p'];?></small></p>
+             </div>
          </div>
-
-         <p class="mt-5 border-left border-dark pl-3"><?php echo $q['conteudo']; ?></p>
+        <?php $paragrafos = explode('@', $q['conteudo'])?>
+        <div class="text-justify font-weight-light"  style="text-indent: 1em">
+         <p class="mt-5 border-left border-dark pl-3">
+           <?php foreach($paragrafos as $p){?>
+            <p><?php echo $p?></p>
+            <?php } ?>
+          </p>
 
         <?php } ?>
+        </div>
 
         <a href="blog.php" class="btn btn-outline-dark my-3">Voltar</a>
 

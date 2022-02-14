@@ -137,3 +137,9 @@ footer.footer .rede-social, footer.footer .rede-social:hover {
   text-decoration: none;
   color: #030229;
 }
+
+p {
+  margin-bottom: 0 }
+p + p {
+  text-indent: 1.5em;
+  margin-top: 0 }
