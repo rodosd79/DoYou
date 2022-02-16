@@ -34,5 +34,11 @@ $despesa = mysqli_fetch_array($query);
 $saldo = str_replace('.',',',($receita[0] - $despesa[0]));
 
 
+// TABELA
+
+$tab = "SELECT *, DATE_FORMAT(dataMov, '%d/%m/%Y') as data_ FROM movimentacao WHERE idUsuario = '$id' ORDER BY data_ desc";
+
+$query = mysqli_query($conn,$tab);
+
 
 ?>
