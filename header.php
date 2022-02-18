@@ -1,9 +1,5 @@
 <?php
-require_once "db/conexao.php";
-
-if (!isset($_SESSION['nome'])){
-    session_start();
-}
+require_once "db/db_header.php";
 ?>
 <div class="sticky-top">
     <header class="navbar navbar-expand-md Header px-md-4 justify-content-between">
@@ -52,9 +48,11 @@ if (!isset($_SESSION['nome'])){
     <?php if(isset($_SESSION['nome'])){ ?>
         <div class="d-flex justify-content-between align-items-center py-2 px-lg-4 sub-header">
             <h5 class="mb-0 pl-2">Olá, <?php echo $_SESSION['nome']; ?>!</h5>
-            <small class="align-items-center">
-                
-                <?php echo date('d/m/Y'); ?>
+            <small class="align-items-center d-flex">
+            <div class="d-flex mr-2">
+                <h6 class="mb-0 mr-1"> <strong class="DoYou">Saldo:</strong></h6>
+                <h6 class="mb-0">R$ <?php echo $saldo; ?></h6>
+            </div>
                 <!-- Esse sair n vai ficar ai p sempre hehehe -->
                 <a href="db/logout.php" class="btn myBtn mr-2">SAIR</a></small>
                 
