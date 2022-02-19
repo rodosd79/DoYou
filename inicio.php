@@ -56,18 +56,35 @@ if (!isset($_SESSION['nome'])) {
         </div>
         </div>
         <!-- NAV DE TABELAS -->
-        <div class="justify-content-center w-100 mt-3">
-            <nav class="nav myNav nav-tabs justify-content-md-center">
-                <a href="#" class="nav-link">Geral</a>
-                <a href="#" class="nav-link">Receitas</a>
-                <a href="#" class="nav-link">Despesas</a>
-                <a href="#" class="nav-link">Investimentos</a>
-                <a href="#" class="nav-link">Relatórios</a>
-            </nav>
-        </div>
+            <div class="justify-content-center w-100 mt-3">
+                <nav class="nav myNav nav-tabs justify-content-md-center">
+                    <a href="#" class="nav-link">Geral</a>
+                    <a href="#" class="nav-link">Receitas</a>
+                    <a href="#" class="nav-link">Despesas</a>
+                    <a href="#" class="nav-link">Investimentos</a>
+                    <a href="#" class="nav-link">Relatórios</a>
+                </nav>
+            </div>
         <!--  -->
     </div>
+    
+    <div class="d-flex container mb-4 p-0">
+        <div class="d-flex flex-column bgPerso p-3 mr-4 iBlog">
+            <h5 class="vBlog">Nosso Blog</h5>
+            <div class="cBlog">
+                <?php foreach($blogs as $b){ ?>
+                    <div class="divBlog">
+                        <a href="#" class="linkBlog py-2"><?php echo $b['titulo'] ?> <br></a>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+        <div class="d-flex container flex-column bgPerso p-3">
+            <div id="graf">
 
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
         <?php include_once "footer.php" ?>
     <!--  -->

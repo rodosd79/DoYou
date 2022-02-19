@@ -40,5 +40,11 @@ $tab = "SELECT *, DATE_FORMAT(dataMov, '%d/%m/%Y') as data_ FROM movimentacao WH
 
 $query = mysqli_query($conn,$tab);
 
+// BLOG
+
+$sql = "SELECT * , date_format(data_post, '%d/%m/%Y') as data_p FROM blog ORDER BY data_post DESC";
+$blogs = mysqli_query($conn, $sql);
+
+
 
 ?>
