@@ -1,9 +1,7 @@
 <?php
     require_once "db/listar_posts.php";
 
- 
 ?>
-
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -18,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>DoYou Blog</title>
+    <title>DoYou | Blog</title>
   </head>
   <body>
     <?php include_once "header.php"?>
@@ -34,7 +32,7 @@
 
         <!--Mostrar posts do banco de dados-->
         <div class="row">
-           <?php foreach($query as $q){ ?>    
+           <?php foreach($post as $q){ ?>    
                 <div class="col-12 col-lg-4 d-flex justify-content-center">
                     <div class="card text-white bg-dark mt-5" style="width: 18rem;">
                        <img src="<?php echo $q['imagem']?>" class="card-img-top" alt="<?php echo $q['alt_img']?>">
