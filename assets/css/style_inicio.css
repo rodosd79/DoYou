@@ -63,7 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 .iBlog {
   overflow-wrap: break-word;
   overflow-y: auto;
-  max-width: 400px;
   height: 400px;
 }
 
