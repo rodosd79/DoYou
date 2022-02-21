@@ -17,7 +17,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <title>DoYou Blog</title>
   </head>
   <body>
@@ -34,15 +34,17 @@
 
         <!--Mostrar posts do banco de dados-->
         <div class="row">
-           <?php foreach($query as $q){ ?>    
+           <?php foreach($posts as $q){ ?>    
                 <div class="col-12 col-lg-4 d-flex justify-content-center">
-                    <div class="card text-white bg-dark mt-5" style="width: 18rem;">
-                       <img src="<?php echo $q['imagem']?>" class="card-img-top" alt="<?php echo $q['alt_img']?>">
+                    <div class="card bg-dark text-white rounded mt-5 " style="width: 18rem;">
+                       <img src="<?php echo $q['imagem']?>" class="card-img-top" alt="<?php echo $q['alt_img']?>" style="height:10rem;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $q['titulo'];?></h5>
                             <!--<p class="card-text"><small><?php echo substr($q['conteudo'],0,60);?>...</small></p>-->
                             <p class="card-text"><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p'];?></small></p>
-                            <a href="blog_post.php?id=<?php echo $q['idPost']?>" class="btn btn-light">Leia mais<span class="text-danger">&rarr;</span></a>
+                        </div>
+                        <div class="card-footer text-right">
+                            <a href="blog_post.php?idPost=<?php echo $q['idPost']?>" class="btn btn-light">Leia mais<span class="text-danger">&rarr;</span></a>
                         </div>
                      </div>
                  </div>
@@ -50,6 +52,20 @@
 
 
         </div>
+
+
+    
+    </div>
+ 
+    <?php include_once "footer.php"?>
+    
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
 
 
     

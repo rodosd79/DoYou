@@ -4,7 +4,7 @@
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,36 +15,37 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <title>DoYou Blog</title>
   </head>
   <body>
   <?php include_once "header.php"?>
     <div class="container mt-5">
-       <?php foreach($query as $q){ ?>
+       <?php foreach($posts as $q){ ?>
 
-        
-        <div class="bg-dark p-5 mx-auto rounded-lg text-white text-center">
-            <img src="<?php echo $q['imagem']?>" style="width:50vw;"> 
+        <div class="bg-light p-5 mx-auto rounded-lg  text-center">
+            
              <h3 class="mt-3"><?php echo $q['titulo']; ?></h3>
+             <img src="<?php echo $q['imagem']?>" style="width:50vw;"> 
              <div class="mt-3">
-                <p><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p'];?></small></p>
+             <p><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p'];?></small></p>
              </div>
          </div>
-        <?php $paragrafos = explode('@', $q['conteudo'])?>
-        <div class="text-justify font-weight-light"  style="text-indent: 1em">
-         <p class="mt-5 border-left border-dark pl-3">
-           <?php foreach($paragrafos as $p){?>
-            <p><?php echo $p?></p>
-            <?php } ?>
-          </p>
+       
+        <div class="text-justify-center mx-20"  style="text-indent: 1em; width:80vw;">
+            <?php $paragrafos = explode('@', $q['conteudo'])?>
+            <p class="mt-5 border-left border-dark pl-3">
+             <?php foreach($paragrafos as $p){?>
+             <p><?php echo $p?></p>
+               <?php } ?>
+           </p>
 
         <?php } ?>
         </div>
 
         <a href="blog.php" class="btn btn-outline-dark my-3">Voltar</a>
 
-        <a href="index.php" class="btn btn-outline-dark my-3">Home</a>
+        <a href="index.php" class="btn btn-info my-3">Home</a>
 
         </div>
     </div>

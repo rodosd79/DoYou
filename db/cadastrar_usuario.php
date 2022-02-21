@@ -2,10 +2,10 @@
 
     require_once "conexao.php";
 
-    if(isset($_REQUEST['novo_usuario'])){
-        $nome = $_REQUEST['nome'];
-        $email= $_REQUEST['email'];
-        $senha= md5($_REQUEST['senha']);
+    if(isset($_POST['novo_usuario'])){
+        $nome = $_POST['nome'];
+        $email= $_POST['email'];
+        $senha= md5($_POST['senha']);
 
         $sql = "INSERT INTO usuario (nome, email, senha) VALUES (?, ?,?)";
 

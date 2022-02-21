@@ -14,10 +14,10 @@ require_once "db/verificar_login.php";
     <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-	<!--ver alteração no layout bs4
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="assets/css/style_cadastro.css">
+    <link rel="stylesheet" href="assets/css/style_login.css">
+	<link rel="shortcut icon" href="assets/img/favicon.ico">
     <title>Cadastro</title>
+	
 </head>
 <body>
 	<div class="container">
@@ -35,13 +35,12 @@ require_once "db/verificar_login.php";
 			<input type="password" name="senha" placeholder="Senha" />
 			</div>
 			<input class="btn mb-10" type="submit" name="logar" value="Entrar"/>
-			
-			
-			<small class="text-muted">Ainda não possui conta?</small>
-			<a href="cadastro.php" class="text-success">Faça seu cadastro</a>
-			
-			</form>
-			</div>
+
+			<div class="links">
+        	<p class="text-center mb-1">Ainda não possui conta? <a class="txt-brand" href="cadastro.php">Faça seu cadastro</a></p>
+    		</div>
+		</form>
+		</div>
 		<div class="panels-container">
 			<div class="panel left-panel">
 			<img src="assets/img/business.svg" class="image" alt="" />

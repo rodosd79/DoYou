@@ -3,7 +3,7 @@ require_once "conexao.php";
 
 session_start();
 
-if(isset($_REQUEST['logar'])){
+if(isset($_POST['logar'])){
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
     

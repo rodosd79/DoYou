@@ -22,7 +22,7 @@ input {
   min-height: 100vh;
   overflow: hidden;
 }
-/*
+
 .container::before {
   content: '';
   position: absolute;
@@ -36,7 +36,7 @@ input {
   border-radius: 50%;
   z-index: 6;
 }
-*/
+
 .forms-container {
   position: absolute;
   width: 100%;
@@ -234,6 +234,29 @@ form.sign-up-form {
 .container.sign-up-mode form.sign-up-form {
   z-index: 2;
   opacity: 1;
+}
+
+.links
+{
+  padding:15px 5px 0;
+  font-size:13px;
+  color:#96a2b2
+}
+.links:after
+{
+  content:'';
+  display:table;
+  clear:both
+}
+.links a
+{
+  color:#99b296;
+  opacity:.9
+}
+.links a:hover
+{
+  color:#1AC76A;
+  opacity:1
 }
 
 @media only screen and (max-device-width: 900px) {

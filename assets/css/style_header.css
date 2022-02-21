@@ -15,7 +15,7 @@ a:hover {
 
 .Header {
   backdrop-filter: blur(12px);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: black;
   font-weight: 700 !important;
   border-bottom: #00d863 solid 1px;
 }
@@ -138,8 +138,16 @@ footer.footer .rede-social, footer.footer .rede-social:hover {
   color: #030229;
 }
 
+.sub-header {
+  background-color: white;
+  border-bottom: solid 1px #00d863;
+}
+
 p {
-  margin-bottom: 0 }
+  margin-bottom: 0;
+}
+
 p + p {
   text-indent: 1.5em;
-  margin-top: 0 }
+  margin-top: 0;
+}
