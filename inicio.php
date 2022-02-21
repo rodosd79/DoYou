@@ -9,9 +9,13 @@ if (!isset($_SESSION['nome'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="shortcut icon" href="assets/img/favicon.ico">
     <title>DoYou | Geral</title>
     
+=======
+    <title>DoYou | Geral</title>
+>>>>>>> b23e35a173a2e6d66655ff71ebc02707faeae874
     <!-- DoYou style -->
     <link rel="stylesheet" href="assets/css/style_inicio.css">
     <link rel="stylesheet" href="assets/css/style_header.css">
@@ -30,6 +34,7 @@ if (!isset($_SESSION['nome'])) {
         ?>
     <!--  -->
 
+<<<<<<< HEAD
 
     <div class="d-flex container flex-column bgPerso my-4 p-3">
         <div class="d-flex">
@@ -70,6 +75,63 @@ if (!isset($_SESSION['nome'])) {
         <!--  -->
     </div>
 
+=======
+    <div class="d-flex py-2 px-lg-4 relatorio">
+        <div class="d-inline-block p-2 pr-4 relat-item">
+            <h5 class="mb-0"> <strong class="DoYou">Saldo:</strong></h5>
+            <h4>R$ <?php echo $saldo; ?></h4>
+        </div>
+    </div>
+    <!-- NAV DE TABELAS -->
+    <nav class="nav myNav nav-tabs">
+        <a href="#" class="nav-link active">Geral</a>
+        <a href="" class="nav-link">Lucro</a>
+        <a href="" class="nav-link">Despesas</a>
+        <a href="" class="nav-link">Investimentos</a>
+        <a href="" class="nav-link">Relatórios</a>
+    </nav>
+    <!-- TABELA -->
+<div class="mx-md-5 px-lg-5 mt-2">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="myTable">
+                <tr>
+                    <th scope="col" class="tipo">Tipo</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($query as $r){ ?>
+                <tr style="color: <?php if($r['idTipoMov'] == "2") {echo "red";} else {echo "green";} ?>;">
+                    <td scope="row" class="tipo">
+                        <?php echo $r['idTipoMov'] ?>
+                    </td>
+
+                    <td>
+                        <?php echo $r['descricao'] ?>
+                    </td>
+
+                    <td> 
+                        <?php echo 'R$ ' . str_replace(".", ",", $r['valor']) ?>
+                    </td>
+
+                    <td> 
+                        <?php echo $r['data_'] ?> 
+                    </td>
+
+                    <td> 
+                        <?php echo $r['idCategoria'] ?> 
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+ </div>
+>>>>>>> b23e35a173a2e6d66655ff71ebc02707faeae874
     <!-- Footer -->
         <?php include_once "footer.php" ?>
     <!--  -->

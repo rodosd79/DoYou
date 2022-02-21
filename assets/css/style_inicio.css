@@ -1,3 +1,4 @@
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0px !important;
 }
@@ -50,4 +51,51 @@ h1, h2, h3, h4, h5, h6 {
 .myNav .nav-link:hover {
   background-color: #030229;
   border: none;
+}
+
+.relatorio {
+  box-shadow: 0 2px 20px #0000003d;
+}
+
+.relatorio h1, .relatorio h2, .relatorio h3, .relatorio h4, .relatorio h5, .relatorio h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.relatorio .relat-item {
+  border: solid 0.5px #00d863;
+  border-left: solid 6px #00d863;
+}
+
+.myNav {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap !important;
+}
+
+.myNav .nav-link {
+  color: #00d863;
+}
+
+.myNav .active {
+  border-bottom: none !important;
+  color: #09f376 !important;
+}
+
+@media screen and (max-width: 425px) {
+  .tipo {
+    display: none;
+    visibility: hidden;
+    width: 0px;
+    padding: 0px !important;
+  }
+}
+
+.myTable {
+  background-color: #00d863;
+  color: white;
+}
+
+.table-bordered {
+  border-color: #4effa0 !important;
 }

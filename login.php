@@ -1,5 +1,8 @@
 <?php
 require_once "db/verificar_login.php";
+if(isset($_SESSION['nome'])){
+	header('location: inicio.php');
+}
 
 ?>
 
