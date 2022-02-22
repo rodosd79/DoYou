@@ -3,13 +3,12 @@ require_once "conexao.php";
 
 // Retorna post do banco por id
 
-if(isset($_REQUEST['idPost'])){
-    $idPost = $_REQUEST['idPost'];
+if(isset($_REQUEST['id'])){
+    $id = $_REQUEST['id'];
 
-    $sql = "SELECT * , date_format(data_post, '%d/%m/%Y') as data_p FROM blog WHERE idPost = $idPost";
+    $sql = "SELECT * , date_format(data_post, '%d/%m/%Y') as data_p FROM blog WHERE idPost = $id";
 
-    $posts = mysqli_query($conn, $sql);
+    $post = mysqli_query($conn, $sql);
 
-
-    
 }
+?>

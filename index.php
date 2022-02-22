@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoYou | Controle Financeiro</title>
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+
     <!-- DoYou Style -->
     <link rel="stylesheet" href="assets/css/style_header.css">
 

@@ -1,0 +1,64 @@
+<?php
+  require_once "db/inserir_movimentacao.php";
+  require_once "db/listar_categorias.php";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/form_style.css">
+</head>
+
+<body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insira seus dados</title>
+    </head>
+    <body class="mt-5 mb-5">
+
+      <form  method="post">
+        
+        <h1>Formulario de Dados</h1>
+        
+        <fieldset>
+
+        <label for="date">Data:</label>
+          <input type="date" id="date" name="date">
+
+        <label for="valor">Valor: R$</label>
+        <input type="number" id="valor" name="valor">
+
+        <label for="des">Descrição:</label>
+            <textarea id="des" name="des"></textarea>
+            
+            
+        <label for="categoria">Categoria:</label>
+          <select id="categoria" name="categoria">
+            <?php foreach($categorias as $c) {?>
+              <option value="<?php echo $c['idCategoria']?>"><?php echo $c['nome']?></option>
+            <?php } ?>
+          
+        </fieldset>
+          
+        <div class="form-row justify-content-center mt-4">
+        <div class="form-group  col-md-4 mt-2">      
+            <input type="button" class="form-control btn btn-success mt-2" name="nova_movimentacao" value="Cadastrar">
+            <input type="reset" class="form-control btn btn-secondary mt-2" value="Limpar dados">
+        </div>
+        </div>
+        
+      </form>
+      
+    </body>
+</html>
+
+</body>
+</html>

@@ -33,12 +33,20 @@ $despesa = mysqli_fetch_array($query);
 // Troca o ponto por vírgula do resultado da subtração entre a receita e despesa
 $saldo = str_replace('.',',',($receita[0] - $despesa[0]));
 
+// BLOG
 
-// TABELA
+$sql = "SELECT * , date_format(data_post, '%d/%m/%Y') as data_p FROM blog ORDER BY data_post DESC";
+$blogs = mysqli_query($conn, $sql);
 
-$tab = "SELECT *, DATE_FORMAT(dataMov, '%d/%m/%Y') as data_ FROM movimentacao WHERE idUsuario = '$id' ORDER BY data_ desc";
+// Retorna só despesas
+$sqlD = "SELECT valor, movimentacao.idTipoMov, nome, SUM(valor) as somaValor FROM movimentacao INNER JOIN categoria ON movimentacao.idCategoria = categoria.idCategoria WHERE idUsuario = '$id' AND movimentacao.idTipoMov = '2' GROUP BY nome";
 
-$query = mysqli_query($conn,$tab);
+$graficoD = mysqli_query($conn, $sqlD);
 
+//  Retorna só receitas
+
+$sqlR = "SELECT valor, movimentacao.idTipoMov, nome, SUM(valor) as somaValor FROM movimentacao INNER JOIN categoria ON movimentacao.idCategoria = categoria.idCategoria WHERE idUsuario = '$id' AND movimentacao.idTipoMov = '1' GROUP BY nome";
+
+$graficoR = mysqli_query($conn, $sqlR);
 
 ?>

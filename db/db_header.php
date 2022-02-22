@@ -28,17 +28,20 @@ if (isset($_SESSION['id'])){
 if (isset($id)) {
     // Aqui retorna a receita/lucro(total)
     $cmd = "SELECT sum(valor) FROM movimentacao WHERE idUsuario = '$id' AND idTipoMov = '1'";
-    $query = mysqli_query($conn, $cmd);
+    $r = mysqli_query($conn, $cmd);
 
-    $receita = mysqli_fetch_array($query);
+    $receita = mysqli_fetch_array($r);
 
     // Aqui retorna as despesas(total)
     $cmd = "SELECT sum(valor) FROM movimentacao WHERE idUsuario = '$id' AND idTipoMov = '2'";
-    $query = mysqli_query($conn, $cmd);
+    $d = mysqli_query($conn, $cmd);
 
-    $despesa = mysqli_fetch_array($query);
+    $despesa = mysqli_fetch_array($d);
+
+    // Receita menos despesa
+    $total = $receita[0] - $despesa[0];
 
     // Troca o ponto por vírgula do resultado da subtração entre a receita e despesa
-    $saldo = str_replace('.',',',($receita[0] - $despesa[0]));
+    $saldo = number_format($total, 2, ',', '.');
 }
 ?>
