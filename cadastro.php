@@ -26,13 +26,25 @@ require_once "db/cadastrar_usuario.php";
 <main>
   
   <div class="login-block">
-
-    <form action="#">
+     <?php if(isset($_REQUEST['erro'])){ ?>
+            <?php if($_REQUEST['erro'] == 1){ ?>
+                <div class="alert alert-danger" role="alert">
+                    As senhas informadas não conferem
+                </div>
+            <?php } else 
+                if($_REQUEST['erro'] == 2){ ?>
+                <div class="alert alert-danger" role="alert">
+                    O e-mail já foi cadastrado
+                </div>
+            
+    <?php }} ?>
+    <form method="POST" class="cadastro-form">
 
     <div class="mb-2">
     <div class="cadastro-usuario">
-			<form method="POST" class="cadastro-form">
+			
 			<h2 class="title">Cadastro</h2>
+
 			<div class="input-field">
 			<i class="bi bi-person-circle"></i>
 			<input type="text" name="nome" placeholder="Nome Completo" required/>
@@ -43,11 +55,11 @@ require_once "db/cadastrar_usuario.php";
 			</div>
 			<div class="input-field">
 				<i class="bi bi-lock-fill"></i>
-			<input type="password" name="senha" id="senha" placeholder="Senha"  />
+			<input type="password" name="senha" id="senha" placeholder="Senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{4,}$"  onkeyup="validaSenha()" required/>
 			</div>
-			<div class="input-field">
+			<div class="input-field" id="pw2">
 				<i class="bi bi-shield-fill-check"></i>
-			<input type="password" id="senha2" placeholder="Confirme sua Senha"  />
+			<input type="password" name="senha2" id="senha2" placeholder="Confirme sua Senha" onkeyup="validaSenha()" required/>
 			</div>
 
       <button class="btn" type="submit" name="novo_usuario">Cadastra-se</button>
@@ -66,7 +78,17 @@ require_once "db/cadastrar_usuario.php";
   
 
 </main>
-
+  <script>
+      function validaSenha(){
+          $senha = document.getElementById("senha").value;
+          $senha2 = document.getElementById("senha2").value;
+          if($senha != $senha2){
+              document.getElementById("pw2").style.border = "red 1px solid";
+          }else{
+              document.getElementById("pw2").style.border = "green 1px solid";
+          }
+      }
+  </script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script type="text/javascript" src="assets/js/cadastro.js"></script>
 </body>
