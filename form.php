@@ -25,26 +25,34 @@
     <body class="mt-5 mb-5">
 
       <form  method="post">
-        
-        <h1>Formulario de Dados</h1>
+        <?php if($_REQUEST['tm']==1){?>
+        <h1>Adicionar Receita</h1>
+        <?php } else { ?>
+        <h1>Adicionar Despesa</h1>
+        <?php } ?>
+          
         
         <fieldset>
+        <label for="categoria">Categoria:</label>
+          <select id="categoria" name="categoria">
+          <?php foreach($categorias as $c) {?>
+              <option value="<?php echo $c['idCategoria']?>"><?php echo $c['nome']?></option>
+            <?php } ?>
+          
+
+        <label for="des">Descrição:</label>
+          <textarea id="des" name="des"></textarea>
 
         <label for="date">Data:</label>
-          <input type="date" id="date" name="date">
+        <input type="date" id="date" name="date">
 
         <label for="valor">Valor: R$</label>
         <input type="number" id="valor" name="valor">
 
-        <label for="des">Descrição:</label>
-            <textarea id="des" name="des"></textarea>
+       
             
             
-        <label for="categoria">Categoria:</label>
-          <select id="categoria" name="categoria">
-            <?php foreach($categorias as $c) {?>
-              <option value="<?php echo $c['idCategoria']?>"><?php echo $c['nome']?></option>
-            <?php } ?>
+        
           
         </fieldset>
           
