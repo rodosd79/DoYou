@@ -13,3 +13,5 @@ if (isset($_REQUEST['tm'])){
     $sql = "SELECT * FROM categoria";
     $categorias = mysqli_query($conn, $sql);
 }
+
+

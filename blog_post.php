@@ -15,21 +15,21 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
-    <title>DoYou | Blog</title>
+
+    <title>DoYou Blog</title>
   </head>
   <body>
   <?php include_once "header.php"?>
     <div class="container mt-5">
-       <?php foreach($post as $q){ ?>
+       <?php foreach($query as $q){ ?>
 
         
         <div class="bg-dark p-5 mx-auto rounded-lg text-white text-center">
-            <img src="<?php echo $q['imagem'] ?>" style="width:50vw;"> 
-             <h3 class="mt-3"><?php echo $q['titulo']; ?></h3>
+        <h3 class="mt-3"><?php echo $q['titulo']; ?></h3>
+            <img src="<?php echo $q['imagem']?>" style="width:50vw;"> 
              <div class="mt-3">
-                <p><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p']; ?></small></p>
+               
+                <p><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p'];?></small></p>
              </div>
          </div>
         <?php $paragrafos = explode('@', $q['conteudo'])?>
@@ -57,4 +57,6 @@
 
     
   </body>
+  <aside>
+    <p>Links relacionados</p>
 </html>

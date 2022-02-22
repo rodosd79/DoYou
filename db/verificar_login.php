@@ -7,6 +7,7 @@ if(isset($_REQUEST['logar'])){
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
     
+    
     //consulta ao banco de dados e validação
 
     $query = "SELECT * FROM usuario WHERE email = '{$email}' AND senha = '{$senha}'";
@@ -17,7 +18,7 @@ if(isset($_REQUEST['logar'])){
     if(mysqli_num_rows($result) > 0){
 
         $dados = mysqli_fetch_array($result);
-        $_SESSION['id'] = $dados['id'];
+        $_SESSION['id'] = $dados['idUsuario'];
         $_SESSION['nome'] = $dados['nome'];
         $_SESSION['email'] = $dados['email'];
 

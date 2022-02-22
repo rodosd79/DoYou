@@ -1,11 +1,13 @@
 <?php
   require_once "db/inserir_movimentacao.php";
   require_once "db/listar_categorias.php";
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,14 +18,8 @@
     <link rel="shortcut icon" href="assets/img/favicon.ico">
 </head>
 
-<body>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Insira seus dados</title>
-    </head>
+ 
     <body class="mt-5 mb-5">
 
       <form  method="post">
@@ -60,7 +56,7 @@
           
         <div class="form-row justify-content-center mt-4">
         <div class="form-group  col-md-4 mt-2">      
-            <input type="button" class="form-control btn btn-success mt-2" name="nova_movimentacao" value="Cadastrar">
+            <input type="submit" class="form-control btn btn-success mt-2" name="nova_movimentacao" value="Cadastrar">
             <input type="reset" class="form-control btn btn-secondary mt-2" value="Limpar dados">
         </div>
         </div>
@@ -70,5 +66,3 @@
     </body>
 </html>
 
-</body>
-</html>

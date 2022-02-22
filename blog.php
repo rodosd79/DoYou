@@ -42,8 +42,11 @@
                             <h5 class="card-title"><?php echo $q['titulo'];?></h5>
                             <!--<p class="card-text"><small><?php echo substr($q['conteudo'],0,60);?>...</small></p>-->
                             <p class="card-text"><small class="text-muted font-italic"><?php echo $q['autor'] . " &nbsp &nbsp &nbsp &nbsp " . $q['data_p'];?></small></p>
+                          </div>
+                          <div class="card-footer text-right">
                             <a href="blog_post.php?id=<?php echo $q['idPost']?>" class="btn btn-light">Leia mais<span class="text-danger">&rarr;</span></a>
-                        </div>
+                          </div>
+                        
                      </div>
                  </div>
             <?php } ?>
