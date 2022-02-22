@@ -10,7 +10,7 @@ if (!isset($_SESSION['nome'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoYou | Geral</title>
-
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <!-- DoYou style -->
     <link rel="stylesheet" href="assets/css/style_inicio.css">
     <link rel="stylesheet" href="assets/css/style_header.css">

@@ -16,7 +16,7 @@ require_once "db/verificar_login.php";
 
     <link rel="stylesheet" href="assets/css/style_login.css">
 	<link rel="shortcut icon" href="assets/img/favicon.ico">
-    <title>Cadastro</title>
+    <title>Login</title>
 	
 </head>
 <body>

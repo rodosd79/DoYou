@@ -16,6 +16,7 @@ require_once "db/cadastrar_usuario.php";
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
   <link rel="stylesheet" href="assets/css/style_cadastro.css">
+  
   <link rel="shortcut icon" href="assets/img/favicon.ico">
     <title>Cadastro</title>
 	
