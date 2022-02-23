@@ -31,7 +31,7 @@ $query = mysqli_query($conn, $cmd);
 $despesa = mysqli_fetch_array($query);
 
 // Troca o ponto por vírgula do resultado da subtração entre a receita e despesa
-$saldo = str_replace('.',',',($receita[0] - $despesa[0]));
+$saldo = number_format(($receita[0] - $despesa[0]), 2, ',', '.');
 
 // BLOG
 
