@@ -16,7 +16,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
+<<<<<<< Updated upstream
     <title>DoYou Blog</title>
+=======
+    <title>DoYou | Blog</title>
+
+    <style>
+      p {
+        font-family: 'Times New Roman', Times, serif !important;
+      }
+      p strong {
+        font-weight: 700 !important;
+      }
+    </style>
+>>>>>>> Stashed changes
   </head>
   <body>
   <?php include_once "header.php"?>
@@ -36,7 +49,7 @@
         <div class="text-justify font-weight-light"  style="text-indent: 1em">
          <p class="mt-5 border-left border-dark pl-3">
            <?php foreach($paragrafos as $p){?>
-            <p><?php echo $p?></p>
+            <p class="text-justify"><?php echo $p ?></p>
             <?php } ?>
           </p>
 
