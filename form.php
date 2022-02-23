@@ -22,7 +22,7 @@
  
     <body class="mt-5 mb-5">
 
-      <form  method="post">
+      <form  method="post" class="bg-info">
         <?php if($_REQUEST['tm']==1){?>
         <h1>Adicionar Receita</h1>
         <?php } else { ?>
@@ -47,10 +47,6 @@
         <label for="valor">Valor: R$</label>
         <input type="number" id="valor" name="valor">
 
-       
-            
-            
-        
           
         </fieldset>
           

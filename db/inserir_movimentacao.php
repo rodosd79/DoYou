@@ -4,8 +4,7 @@
 
     
     if (!isset($_SESSION['id'])){
-        session_start();
-       
+        session_start(); 
     }
 
     if(isset($_REQUEST['nova_movimentacao'])){  
@@ -47,7 +46,7 @@
        // mysqli_query($conn, $sql);
 
 
-        header("Location: inicio.php");
+        header("Location: tabela.php");
 
 
 
