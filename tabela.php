@@ -30,11 +30,10 @@ if (!isset($_SESSION['nome'])) {
 
     <!-- NAV DE TABELAS -->
         <nav class="nav myNav nav-tabs justify-content-md-center">
-            <a href="#" class="nav-link active">Geral</a>
+            <a href="tabela.php" class="nav-link active">Geral</a>
             <a href="" class="nav-link">Receitas</a>
             <a href="" class="nav-link">Despesas</a>
-            <a href="" class="nav-link">Investimentos</a>
-            <a href="" class="nav-link">Relatórios</a>
+            <a href="" class="nav-link">Gráficos</a>
         </nav>
     <!--  -->
 
@@ -42,6 +41,11 @@ if (!isset($_SESSION['nome'])) {
 
     <!-- TABELA -->
         <div class="mx-md-5 px-lg-5 mt-2">
+            <form method="post">
+                <div class="form-group d-inline-flex" style="border: solid 1px #00d863;">
+                <input class="d-inline-flex w-75 form-control" type="month" name="mes" id="mes" style="border-right: none;border: none;"><button class="btn myBtn" type="submit" name="pesq" style="border-radius: 0px !important; vertical-align: inherit;">Pesquisar</button>
+                </div>
+            </form>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered text-center">
                     <thead class="myTable">
@@ -54,7 +58,12 @@ if (!isset($_SESSION['nome'])) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($query as $r){ ?>
+                        <?php if (mysqli_num_rows($query) == 0){ ?>
+                        <td class="w-100">
+                            Nenhum resultado
+                        </td>
+                        <?php }
+                        foreach($query as $r){ ?>
                         <tr style="color: <?php if($r['idTipoMov'] == "2") {echo "red";} else {echo "green";} ?>;">
                             <td scope="row" class="tipo">
                                 <?php echo $r['idTipoMov'] ?>
