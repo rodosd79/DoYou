@@ -46,6 +46,11 @@ if (!isset($_SESSION['nome'])) {
                 <input class="d-inline-flex w-75 form-control" type="month" name="mes" id="mes" style="border-right: none;border: none;"><button class="btn myBtn" type="submit" name="pesq" style="border-radius: 0px !important; vertical-align: inherit;">Pesquisar</button>
                 </div>
             </form>
+            <?php if (mysqli_num_rows($query) == 0){ ?>
+                <h6 class="alert alert-danger text-center">
+                    Nenhum resultado
+            </h6>
+            <?php } ?>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered text-center">
                     <thead class="myTable">
@@ -54,17 +59,14 @@ if (!isset($_SESSION['nome'])) {
                             <th scope="col">Descrição</th>
                             <th scope="col">Valor</th>
                             <th scope="col" class="col-1">Data</th>
-                            <th scope="col col-2">Categoria</th>
+                            <th scope="col" class="col-2">Categoria</th>
+                            <th scope="col" class="col-1"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (mysqli_num_rows($query) == 0){ ?>
-                        <td class="w-100">
-                            Nenhum resultado
-                        </td>
-                        <?php }
-                        foreach($query as $r){ ?>
-                        <tr style="color: <?php if($r['idTipoMov'] == "2") {echo "red";} else {echo "green";} ?>;">
+                        
+                        <?php foreach($query as $r){ ?>
+                        <tr style="color: <?php if($r['idTipoMov'] == "2") {echo "red";} else {echo "green";} ?>;" class="align-items-center">
                             <td scope="row" class="tipo">
                                 <?php echo $r['idTipoMov'] ?>
                             </td>
@@ -83,6 +85,9 @@ if (!isset($_SESSION['nome'])) {
 
                             <td> 
                                 <?php echo $r['nome'] ?> 
+                            </td>
+                            <td>
+                                <a href="editar_mov.php?tm=<?php echo $r['idTipoMov'] ?>&i=<?php echo $r['idMovimentacao'] ?>" class="btn myBtn" style="border-radius: 0px !important;  ">Editar</a>
                             </td>
                         </tr>
                         <?php } ?>

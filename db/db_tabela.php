@@ -9,13 +9,10 @@ require_once "db_header.php";
 // TABELA
 $tab = "SELECT *, DATE_FORMAT(dataMov, '%d/%m/%Y') as data_ FROM movimentacao INNER JOIN categoria ON movimentacao.idCategoria = categoria.idCategoria WHERE idUsuario = '$id' ORDER BY dataMov desc";
 
-$query = mysqli_query($conn,$tab);
+$query = mysqli_query($conn, $tab);
 
 
-// Selecionar por mês
-// $dataHoje = getdate();
-// $mes = strftime('%B');
-// echo $mes;
+// filtro
 if (isset($_POST['pesq'])){
     $mes = substr($_POST['mes'], 5);
     $ano = substr($_POST['mes'], 0, 4);
