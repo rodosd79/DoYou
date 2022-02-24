@@ -19,7 +19,7 @@
     <!--  -->
 
     <!-- CARROSSEL -->
-        <img src="assets/img/ft1.png" class="img-fluid" alt="">
+        <img src="assets/img/ft1.png" class="w-100" alt="">
     <!--  -->
 
     <h3 class="w-100 my-5 py-1 h3DoYou text-center">Sobre nós</h3>
