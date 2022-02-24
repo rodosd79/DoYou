@@ -20,7 +20,7 @@
 
 
  
-    <body class="mt-5 mb-5">
+    <body class="mt-5 mb-5 bg-info">
 
       <form  method="POST" class="bg-light">
         <?php if(isset($_REQUEST['tm'])){

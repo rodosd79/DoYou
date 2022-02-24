@@ -15,25 +15,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-<<<<<<< HEAD
     <link rel="shortcut icon" href="assets/img/favicon.ico">
-=======
-
-<<<<<<< Updated upstream
->>>>>>> 32724c798471a1824a4409daeb2f6b7d90289764
     <title>DoYou Blog</title>
-=======
-    <title>DoYou | Blog</title>
-
-    <style>
-      p {
-        font-family: 'Times New Roman', Times, serif !important;
-      }
-      p strong {
-        font-weight: 700 !important;
-      }
-    </style>
->>>>>>> Stashed changes
   </head>
   <body>
   <?php include_once "header.php"?>
