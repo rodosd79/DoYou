@@ -11,7 +11,7 @@
 
     <!-- DoYou Style -->
     <link rel="stylesheet" href="assets/css/style_header.css">
-
+    <link rel="stylesheet" href="assets/css/style_blog.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -23,8 +23,8 @@
   <body>
     <?php include_once "header.php"?>
 
-    <div class="container-fluid bg-success text-center py-1">
-        <h3>Blog de notícias e dicas sobre finanças</h3>
+    <div class="mt-3 container-fluid bgTitulo text-center py-1">
+        <h4>Blog de notícias e dicas sobre finanças</h4>
     </div>
 
     
@@ -36,8 +36,8 @@
         <div class="row">
            <?php foreach($post as $q){ ?>    
                 <div class="col-12 col-lg-4 d-flex justify-content-center">
-                    <div class="card text-white bg-dark mt-5" style="width: 18rem;">
-                       <img src="<?php echo $q['imagem']?>" class="card-img-top" alt="<?php echo $q['alt_img']?>">
+                    <div class="card bgCard text-white mt-5" style="width: 18rem;">
+                       <img style="height: 200px;" src="<?php echo $q['imagem']?>" class="card-img-top" alt="<?php echo $q['alt_img']?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $q['titulo'];?></h5>
                             <!--<p class="card-text"><small><?php echo substr($q['conteudo'],0,60);?>...</small></p>-->

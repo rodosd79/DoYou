@@ -69,6 +69,21 @@ a:hover {
   box-shadow: 0 0 50px;
 }
 
+.myBtn-Inverse {
+  background-color: #030229 !important;
+  border-radius: 1.38rem !important;
+  border: #030229 !important;
+  color: #00d863 !important;
+  transition: all 0.8s ease-in-out !important;
+}
+
+.myBtn-Inverse:hover {
+  background-color: #00d865be !important;
+  color: #030229 !important;
+  border: none !important;
+  box-shadow: 0 0 50px;
+}
+
 .h3DoYou {
   background-color: #00d863;
   color: white;

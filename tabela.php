@@ -51,11 +51,12 @@ if (!isset($_SESSION['nome'])) {
                             <th scope="col">Valor</th>
                             <th scope="col" class="col-1">Data</th>
                             <th scope="col col-2">Categoria</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($query as $r){ ?>
-                        <tr style="color: <?php if($r['idTipoMov'] == "2") {echo "red";} else {echo "green";} ?>;">
+                        <tr style="color: <?php if($r['idTipoMov'] == "2") {echo "red";} else {echo "green";} ?>;"></a>
                             <td scope="row" class="tipo">
                                 <?php echo $r['idTipoMov'] ?>
                             </td>
