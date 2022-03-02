@@ -1,7 +1,8 @@
 <?php
   require_once "db/visualizar_movimentacao.php";
   require_once "db/listar_categorias.php";
-
+  require_once "db/alterar_movimentacao.php";
+  require_once "db/excluir_movimentacao.php";
 ?>
 
 <!DOCTYPE html>
