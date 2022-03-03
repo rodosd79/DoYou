@@ -27,7 +27,15 @@
          - O blog terá informações vinda de fontes externas, porém confiavéis, sobre educação financeira.
 
         
+## Tecnologias
 
+- HTML5 e CSS3
+
+- PHP e MySQL
+
+- Bootstrap e Bootstrap Icons
+
+- JavaScript e JSDelivr
 
 
 

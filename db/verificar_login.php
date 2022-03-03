@@ -26,6 +26,6 @@ if(isset($_REQUEST['logar'])){
 
     } else {
         
-        header('location:login.php?erro={$email}');
+        header('location:login.php?erro=l1');
     }
 }

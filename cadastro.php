@@ -22,10 +22,17 @@ require_once "db/cadastrar_usuario.php";
 	
 </head>
 <body class="login-page">
-
+        <div class="mt-5 mx-auto text-center">
+            <a href="index.php" style="text-decoration: none;">
+            <span class="d-inline-flex align-bottom"><img src="assets/img/favicon.ico"></span>
+            <span class="d-inline-flex px-2"><h2 class="DoYou" style="color: #444">DoYou</h2></span>
+            </a>
+        </div>
 
 <main>
-  
+    
+
+    
   <div class="login-block">
      <?php if(isset($_REQUEST['erro'])){ ?>
             <?php if($_REQUEST['erro'] == 1){ ?>
@@ -41,7 +48,7 @@ require_once "db/cadastrar_usuario.php";
     <?php }} ?>
     <form method="POST" class="cadastro-form">
 
-    <div class="mb-2">
+    
     <div class="cadastro-usuario">
 			
 			<h2 class="title">Cadastro</h2>
@@ -63,7 +70,7 @@ require_once "db/cadastrar_usuario.php";
 			<input type="password" name="senha2" id="senha2" placeholder="Confirme sua Senha" onkeyup="validaSenha()" required/>
 			</div>
 
-      <button class="btn" type="submit" name="novo_usuario">Cadastra-se</button>
+      <button class="btn" type="submit" name="novo_usuario">Cadastrar-se</button>
   
       <div class="links">
         <p class="text-center mb-1">Ja possui uma conta? <a class="txt-brand" href="login.php">Login</a></p>
@@ -79,18 +86,29 @@ require_once "db/cadastrar_usuario.php";
   
 
 </main>
-  <script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script type="text/javascript" src="assets/js/cadastro.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
       function validaSenha(){
           $senha = document.getElementById("senha").value;
           $senha2 = document.getElementById("senha2").value;
           if($senha != $senha2){
-              document.getElementById("pw2").style.border = "red 1px solid";
+              document.getElementById("pw2").style.border = "red 2px solid";
           }else{
-              document.getElementById("pw2").style.border = "green 1px solid";
+              document.getElementById("pw2").style.border = "green 2px solid";
           }
       }
-  </script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <script type="text/javascript" src="assets/js/cadastro.js"></script>
+
+        $(document).ready(function(){
+            setTimeout(function() {
+            $(".alert").fadeOut("slow", function() {
+            $(this).alert('close');
+            });
+            }, 4000);
+        })
+
+    </script>
 </body>
 </html>

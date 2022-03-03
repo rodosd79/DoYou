@@ -40,7 +40,7 @@
           <?php foreach($categorias as $c) {?>
               <option value="<?php echo $c['idCategoria']?>"><?php echo $c['nome']?></option>
             <?php } ?>
-          
+          </select>
 
         <label for="des">Descrição:</label>
           <textarea id="des" name="des"><?php echo $m['descricao']?></textarea>
@@ -49,7 +49,7 @@
         <input type="date" id="date" name="date" value="<?php echo $m['dataMov']?>">
 
         <label for="valor">Valor: R$</label>
-        <input type="number" id="valor" name="valor" value="<?php echo $m['valor']?>">
+        <input type="text" id="valor" name="valor" onkeypress="$(this).mask('#.###.##0,00', {reverse: true})" value="<?php echo str_replace('.',',',$m['valor'])?>">
 
         <?php }} else {
           header('location: tabela.php');
@@ -62,12 +62,14 @@
             <button class="form-control btn btn-success mt-2" name="alterar">Alterar</button>
             <button class="form-control btn btn-danger mt-2" name="excluir">Excluir</button>
            
-            <a href="tabela.php?>" class="form-control btn btn-white mt-2">Voltar</a>
+            <a href="tabela.php?tt=0" class="form-control btn btn-white mt-2">Voltar</a>
             
         </div>
         </div>
         
       </form>
-      
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     </body>
 </html>

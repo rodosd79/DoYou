@@ -11,10 +11,11 @@
   
   form {
 	max-width: 300px;
-	margin: 10px auto;
+	margin: 2px auto;
 	padding: 10px 20px;
 	background: #f4f7f8;
 	border-radius: 8px;
+	
   }
   
   h1 {
@@ -50,7 +51,7 @@
   
   input[type="radio"],
   input[type="checkbox"] {
-	margin: 0 4px 8px 0;
+	margin: 0 4px 2px 0;
   }
   
   select {
@@ -72,22 +73,22 @@
 	border: 1px solid #3ac162;
 	border-width: 1px 1px 3px;
 	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
   }
   
   fieldset {
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 	border: none;
   }
   
   legend {
 	font-size: 1.4em;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
   }
   
   label {
 	display: block;
-	margin-bottom: 8px;
+	margin-bottom: 2px;
   }
   
   label.light {

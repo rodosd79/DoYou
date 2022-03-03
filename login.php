@@ -13,17 +13,32 @@ require_once "db/verificar_login.php";
     <meta http-equiv="X-UA-Compatible" content="sie-edge" />
     <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
+	
     <link rel="stylesheet" href="assets/css/style_login.css">
 	<link rel="shortcut icon" href="assets/img/favicon.ico">
     <title>Login</title>
 	
 </head>
 <body>
+	<?php 
+        if (isset($_REQUEST['erro'])) {
+			if($_REQUEST['erro']=='l1'){
+				echo "<script>alert('Email ou senha incorretos')</script>";
+               
+            }
+		}
+    ?>
 	<div class="container">
 		<div class="forms-container">
 			<div class="cadastro-usuario">
+			
 			<form method="POST" class="cadastro-form">
+			<div class="mt-5 mx-auto text-center">
+				<a href="index.php" style="text-decoration: none">
+				<span class="d-inline-flex align-bottom"><img src="assets/img/favicon.ico"></span>
+				<span class="d-inline-flex px-2"><h4 class="DoYou" style="color: #444; float:right; padding: 10px 5px;">DoYou</h4></span>
+            	</a>
+       		</div>
 			<h2 class="title">Login</h2>
 		
 			<div class="input-field">
@@ -51,5 +66,18 @@ require_once "db/verificar_login.php";
   </div>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script type="text/javascript" src="assets/js/cadastro.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Exibe alerts por tempo determinado  -->
+    <script>
+    
+      $(document).ready(function(){
+          setTimeout(function() {
+          $(".alert").fadeOut("slow", function() {
+            $(this).alert('close');
+          });
+          }, 4000);
+        })
+
+    </script>
 </body>
 </html>

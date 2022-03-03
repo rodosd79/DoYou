@@ -14,10 +14,11 @@ if (!isset($_SESSION['nome'])) {
     <!-- DoYou style -->
     <link rel="stylesheet" href="assets/css/style_inicio.css">
     <link rel="stylesheet" href="assets/css/style_header.css">
-
+    
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    
+
+  
     <!-- Grafico -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -45,6 +46,7 @@ if (!isset($_SESSION['nome'])) {
         var chart = new google.visualization.PieChart(document.getElementById('graf'));
         chart.draw(data, options);
       }
+      
     </script>
     <!--  -->
 </head>
@@ -58,14 +60,23 @@ if (!isset($_SESSION['nome'])) {
         }
         ?>
     <!--  -->
+        <?php 
+        if (isset($_SESSION['id'])) {
+            echo '<center><div class="alert alert-success">&#10004 Registo efetuado com sucesso!</div></center>';
+            } 
+            else{
+                echo '<center><div class="alert alert-danger">&#10060 Falha na efetuação  do registro!</div></center>';
+            }
+            
+        ?>
 
     <!-- AREA 1 = Acesso rápido -->
         <div class="d-flex container flex-column bgPerso my-4 p-3">
             <div class="d-flex flex-md-nowrap flex-wrap">
             <div class="order-md-0 order-2 flex-fill d-flex justify-content-between mr-2 mt-1 align-items-center">
-                <h5>Olá, <?php echo $_SESSION['nome'] ?>! <br>Tudo Bem?</h5>
+               
                 <div class="d-flex">
-                    <h5 class="mb-0 mr-1"> <strong class="DoYou">Saldo:</strong></h5>
+                    <h5 class="mb-0 mx-1"> <strong class="DoYou">Saldo:</strong></h5>
                     <h5 class="mb-0">R$ <?php echo $saldo; ?></h5>
                 </div>
             </div>
@@ -80,20 +91,21 @@ if (!isset($_SESSION['nome'])) {
                     </svg>
                     <h6>Despesa</h6>
                 </a>
-              
-                <a href="tabela.php" data-toggle="tooltip" data-placement="bottom" title="Ver relatórios" class="btn btnPerso">
+              <!--
+                <a href="tabela.php?tt=0" data-toggle="tooltip" data-placement="bottom" title="Ver relatórios" class="btn btnPerso">
                     <svg xmlns="http://www.w3.org/2000/svg" height="43px" viewBox="0 0 24 24" width="43px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12zM10 9h8v2h-8zm0 3h4v2h-4zm0-6h8v2h-8z"/></svg>
                     <h6>Relatórios</h6>
                 </a>
+              -->
             </div>
             </div>
             <!-- NAV DE TABELAS -->
                 <div class="justify-content-center w-100 mt-3">
                     <nav class="nav myNav nav-tabs justify-content-md-center">
-                        <a href="#" class="nav-link">Geral</a>
-                        <a href="#" class="nav-link">Receitas</a>
-                        <a href="#" class="nav-link">Despesas</a>
-                        <a href="#" class="nav-link">Investimentos</a>
+                        <a href="tabela.php?tt=0" class="nav-link">Geral</a>
+                        <a href="tabela.php?tt=1" class="nav-link">Receitas</a>
+                        <a href="tabela.php?tt=2" class="nav-link">Despesas</a>
+                        <a href="#" class="nav-link">Gráficos</a>
                     </nav>
                 </div>
             <!--  -->
@@ -133,6 +145,18 @@ if (!isset($_SESSION['nome'])) {
     <!-- Js Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--  -->
+    <script>
+    
+      $(document).ready(function(){
+          setTimeout(function() {
+          $(".alert").fadeOut("slow", function() {
+            $(this).alert('close');
+          });
+          }, 4000);
+        })
+
+    </script>
 </body>
 </html>

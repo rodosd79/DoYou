@@ -2,14 +2,15 @@
 
     require_once "conexao.php";
 
+    session_start(); 
     
-    if (!isset($_SESSION['id'])){
-        session_start(); 
-    }
 
-    if(isset($_REQUEST['nova_movimentacao'])){  
+    if(isset($_REQUEST['nova_movimentacao'])){ 
 
-        $valor= (float)$_REQUEST['valor'];
+        $idUsuario = $_SESSION['id'];
+        $vlr =  str_replace('.','',$_REQUEST['valor']);
+        $vlr =  str_replace(',','.',$vlr);
+        $valor= (double)$vlr;
 
         $dataMov= $_REQUEST['date'];
 
@@ -19,11 +20,9 @@
 
         $idTipoMov = (int)$_REQUEST['tm'];
 
-        $idUsuario = $_SESSION['id'];
-
-
-
-        $sql = "INSERT INTO movimentacao (valor, dataMov, descricao, idCategoria, idTipoMov,idUsuario) VALUES (?, ?, ?, ?, ?, ?)";
+        
+    
+        $sql = "INSERT INTO movimentacao (valor, dataMov, descricao, idCategoria, idTipoMov, idUsuario) VALUES (?, ?, ?, ?, ?, ?)";
 
         $stmt = mysqli_prepare($conn, $sql);
 
@@ -46,10 +45,10 @@
        // mysqli_query($conn, $sql);
 
 
-        header("Location: tabela.php");
-
+       header("Location: tabela.php?tt=0");
 
 
         exit();
+        
 
     }

@@ -17,7 +17,7 @@
 {
   width:100%;
   max-width:460px;
-  margin:8% auto 5%
+  margin:2% auto 5%
 }
 .login-block
 {
@@ -135,6 +135,9 @@ form.sign-up-form {
   color:#1AC76A;
   opacity:1
 }
+.DoYou {
+  color: #00d863;
+}
 
 @media (max-width:767px)
 {
@@ -148,4 +151,10 @@ form.sign-up-form {
     transform:none;
     padding:30px 15px
   }
-  .login-block{padding:20px}}
+  .login-block{padding:20px}
+
+
+  form{
+    width: 100%;
+  }
+}

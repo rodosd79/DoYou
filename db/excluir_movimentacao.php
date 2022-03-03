@@ -10,6 +10,6 @@ if(isset($_REQUEST['excluir'])){
 
     mysqli_query($conn, $sql);
 
-    header("Location: tabela.php");
+    header("Location: tabela.php?tt=0");
 
 }

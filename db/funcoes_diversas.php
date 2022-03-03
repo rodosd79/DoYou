@@ -16,7 +16,7 @@
         
       // echo $horas . ":" . $minutos . ":" . $segundos . "<br>";
 
-        echo strftime("%A") . "," . $dia . " de " . $mes . " de " . $ano;
+        return utf8_encode(strftime("%A") . "," . $dia . " de " . $mes . " de " . $ano);
 
     }
 
