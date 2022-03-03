@@ -18,10 +18,7 @@ if(isset($_REQUEST['tt'])){
     $query = mysqli_query($conn,$tab);
 }
 
-// Selecionar por mês
-// $dataHoje = getdate();
-// $mes = strftime('%B');
-// echo $mes;
+// filtro
 if (isset($_POST['pesq'])){
     $mes = substr($_POST['mes'], 5);
     $ano = substr($_POST['mes'], 0, 4);
