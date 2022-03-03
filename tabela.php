@@ -118,7 +118,7 @@ if (!isset($_SESSION['nome'])) {
                                 <?php echo $r['nome'] ?> 
                             </td>
                             <td>
-                                <a href="editar_mov.php?tm=<?php echo $r['idTipoMov'] ?>&i=<?php echo $r['idMovimentacao'] ?>" class="btn myBtn" style="border-radius: 0px !important;  ">Editar</a>
+                                <a href="movimentacao.php?tm=<?php echo $r['idTipoMov']?>&idMov=<?php echo $r['idMovimentacao'] ?>" class="btn myBtn" style="border-radius: 0px !important;  ">Editar</a>
                             </td>
                         </tr>
                         <?php } ?>
