@@ -99,6 +99,7 @@ if (!isset($_SESSION['nome'])) {
             <!-- NAV DE TABELAS -->
                 <div class="justify-content-center w-100 mt-3">
                     <nav class="nav myNav nav-tabs justify-content-md-center">
+                        <a href="inicio.php" class="nav-link">Início</a> 
                         <a href="tabela.php?tt=0" class="nav-link">Geral</a>
                         <a href="tabela.php?tt=1" class="nav-link">Receitas</a>
                         <a href="tabela.php?tt=2" class="nav-link">Despesas</a>

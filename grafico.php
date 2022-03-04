@@ -123,6 +123,7 @@ if (!isset($_SESSION['nome'])) {
                         <a href="tabela.php?tt=0" class="nav-link">Geral</a>
                         <a href="tabela.php?tt=1" class="nav-link">Receitas</a>
                         <a href="tabela.php?tt=2" class="nav-link">Despesas</a>
+                        <a href="grafico.php" class="nav-link">Gráficos</a>
                        
                     </nav>
                 </div>
