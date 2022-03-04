@@ -20,19 +20,21 @@ require_once "db/verificar_login.php";
 	
 </head>
 <body>
-	<?php 
-        if (isset($_REQUEST['erro'])) {
-			if($_REQUEST['erro']=='l1'){
-				echo "<script>alert('Email ou senha incorretos')</script>";
-               
-            }
-		}
-    ?>
+
 	<div class="container">
 		<div class="forms-container">
 			<div class="cadastro-usuario">
 			
 			<form method="POST" class="cadastro-form">
+            	<?php 
+                    if (isset($_REQUEST['erro'])) {
+                        if($_REQUEST['erro']=='l1'){
+                            echo '<center><div class="alert alert-danger">Email ou senha incorretos.</div></center>';
+                        
+                        }
+                    }
+                ?>
+         
 			<div class="mt-5 mx-auto text-center">
 				<a href="index.php" style="text-decoration: none">
 				<span class="d-inline-flex align-bottom"><img src="assets/img/favicon.ico"></span>

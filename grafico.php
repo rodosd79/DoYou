@@ -38,7 +38,7 @@ if (!isset($_SESSION['nome'])) {
         ]);
 
         var options = {
-          title: 'Minhas Movimentações',
+          title: 'My Daily Activities',
           pieHole: 0.4,
           colors: ['#00d863', '#030229', '#1B5937', '#00A64B', '#2C2975'],
         };
@@ -47,6 +47,32 @@ if (!isset($_SESSION['nome'])) {
         chart.draw(data, options);
       }
       
+
+      google.load("visualization","1", {packages:['corechart']});
+        //chamada da função
+        google.setOnLoadCallback(drawChart);
+
+        //função para montar o gráfico
+        function drawChart(){
+        //variável matriz
+        var data =google.visualization.arrayToDataTable([
+            ['Meses', 'Receitas', 'Despesas'],
+            ['Janeiro', 1000, 800],
+            ['Fevereiro', 1200, 600],
+            ['Março', 900, 750],
+            ['Abril', 2500, 1500]
+        ]);
+        //opções 
+        var options ={title: 'Rendimento',
+                    vAxis:{title:'Meses', titleTextStyle:{color:'red'}}
+                    };
+        //cria objeto pieChart e recebe por parâmetro a div onde será exibido
+        var barras = new google.visualization.BarChart(document.getElementById('barras_div'));
+        //criar o desenho
+        barras.draw(data,options);
+        }
+       
+
     </script>
     <!--  -->
 </head>
@@ -59,13 +85,7 @@ if (!isset($_SESSION['nome'])) {
             exit();
         }
         ?>
-    <!--  -->
-        <?php 
-        if (isset($_REQUEST['msg'])) {
-            if($_REQUEST['msg']==1){
-            echo '<center><div class="alert alert-success">Cadastro efetuado com sucesso!</div></center>';
-            } }
-        ?>
+
 
     <!-- AREA 1 = Acesso rápido -->
         <div class="d-flex container flex-column bgPerso my-4 p-3">
@@ -99,38 +119,28 @@ if (!isset($_SESSION['nome'])) {
             <!-- NAV DE TABELAS -->
                 <div class="justify-content-center w-100 mt-3">
                     <nav class="nav myNav nav-tabs justify-content-md-center">
+                        <a href="inicio.php" class="nav-link">Início</a> 
                         <a href="tabela.php?tt=0" class="nav-link">Geral</a>
                         <a href="tabela.php?tt=1" class="nav-link">Receitas</a>
                         <a href="tabela.php?tt=2" class="nav-link">Despesas</a>
-                        <a href="grafico.php" class="nav-link">Gráficos</a>
+                       
                     </nav>
                 </div>
             <!--  -->
         </div>
     <!--  -->
     
-    <!-- AREA 2 = BLOG E GRAFICO -->
-        <div class="d-flex flex-md-nowrap flex-wrap container mb-4 p-0">
-            <!-- Blog -->
-            <div class="d-flex flex-column bgPerso p-3 mr-md-4 iBlog">
-                <h5 class="vBlog">Nosso Blog</h5>
-                <div class="cBlog">
-                    <?php foreach($blogs as $b){ ?>
-                        <div class="divBlog py-2">
-                            <a href="blog_post.php?id=<?php echo $b['idPost']; ?>" class="linkBlog d-flex py-2">
-                                <img src="<?php echo $b['imagem'] ?>" alt="<?php echo $b['alt_img'] ?>" style="width:10vw; height: 8vw; margin-right: 5px" >
-                                <?php echo $b['titulo'] ?>
-                                <br>
-                            </a>
-                        </div>
-                    <?php } ?>
-                </div>
+     <!-- AREA 2 = GRAFICOS -->
+     <div class="d-flex flex-md-nowrap flex-wrap container mb-4 p-0">
+            <!-- Grafico1 -->
+            <div class="d-flex flex-column bgPerso p-3 mr-md-4">
+               
+                <div id="barras_div" class="w-100 h-100"></div>
+        
             </div>
-            <!-- Grafico -->
+            <!-- Grafico2 -->
             <div class="d-flex container mt-md-0 mt-4 flex-column bgPerso p-3">
-                <div id="graf" class="w-100 h-100">
-
-                </div>
+                <div id="graf" class="w-100 h-100"> </div>
             </div>
         </div>
     <!--  -->
@@ -142,18 +152,6 @@ if (!isset($_SESSION['nome'])) {
     <!-- Js Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--  -->
-    <script>
-    
-      $(document).ready(function(){
-          setTimeout(function() {
-          $(".alert").fadeOut("slow", function() {
-            $(this).alert('close');
-          });
-          }, 4000);
-        })
 
-    </script>
 </body>
 </html>

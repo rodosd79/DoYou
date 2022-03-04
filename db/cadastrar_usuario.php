@@ -1,6 +1,7 @@
 <?php
 
     require_once "conexao.php";
+    session_start();
 
     if(isset($_POST['novo_usuario'])){
         if($_POST['senha']!=$_POST['senha2']){
@@ -22,10 +23,20 @@
         //fecha statement e conexão
         mysqli_stmt_close($stmt);
 
-       // mysqli_query($conn, $sql);
-        echo "<script>alert('Usuário cadastrado com sucesso');</script>";
-        header("Location: index.php");
+        $query = "SELECT * FROM usuario WHERE email = '{$email}' AND senha = '{$senha}'";
+         $result = mysqli_query($conn, $query);
+
+    //verificação de resultado
+
+       if(mysqli_num_rows($result) > 0){
+
+        $dados = mysqli_fetch_array($result);
+        $_SESSION['id'] = $dados['idUsuario'];
+        $_SESSION['nome'] = $dados['nome'];
+        $_SESSION['email'] = $dados['email'];
+        
+        header("Location: inicio.php?msg=1");
 
         exit();
         }
-    }
+    }}
