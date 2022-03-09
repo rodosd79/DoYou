@@ -17,22 +17,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/form_style.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:wght@300;400;700&display=swap');
+    	body{
+        font-family: "Lato", sans-serif;
+        background: url('assets/img/fundo-verde.png');
+        background-size: 100%;
+        border-radius: 1em;
+      }
+      @media screen and (min-width: 512px) {
+        
+        form {
+          max-width: 500px;
+        }
+      }
+    </style>
 </head>
 
 
  
     <body class="mt-5 mb-5">
 
-      <form  method="POST" class="bg-light">
-        <?php if(isset($_REQUEST['tm'])){
-         if($_REQUEST['tm']==1){?>
-        <h1>Receita</h1>
-        <?php } else { ?>
-        <h1>Despesa</h1>
-        <?php } }?>
+      <form  method="POST" style="background-color: #a7acb1;">
+        
           
         <?php if(isset($mov)){
         foreach($mov as $m){ ?>
+        <h3>Movimentação Nº <?php echo $m['idMovimentacao']?>
+        <?php if(isset($_REQUEST['tm'])){
+         if($_REQUEST['tm']==1){?>
+         - Receita</h3>
+        <?php } else { ?>
+          - Despesa</h3>
+        <?php } }?>
         <fieldset>
         <label for="categoria">Categoria:</label>
           <select id="categoria" name="categoria">
@@ -59,10 +76,10 @@
         <div class="form-row justify-content-center mt-4">
         <div class="form-group  col-md-4 mt-2">                  
             <input type="text" hidden value="<?php echo $m['idMovimentacao']?>" name="idMov">
-            <button class="form-control btn btn-success mt-2" name="alterar">Alterar</button>
+            <button class="form-control btn btn-info mt-2" name="alterar">Alterar</button>
             <button class="form-control btn btn-danger mt-2" name="excluir">Excluir</button>
            
-            <a href="tabela.php?tt=0" class="form-control btn btn-white mt-2">Voltar</a>
+            <a href="tabela.php?tt=0" class="form-control btn btn-light mt-2">Voltar</a>
             
         </div>
         </div>

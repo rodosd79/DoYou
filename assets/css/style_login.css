@@ -362,9 +362,7 @@ form.sign-up-form {
   transform: translateX(0%);
 }
 
-.container.sign-up-mode .cadastro-usuario {
-  left: 25%;
-}
+
 
 .container.sign-up-mode form.cadastro-form {
   z-index: 1;
@@ -422,6 +420,9 @@ form.sign-up-form {
 @media only screen and (max-device-width: 900px) {
   .cadastro-usuario { width: 30em; height: 30em;} 
   .panels-container{display: none;}
+  .panels-container img{display: none;}
+ 
+
 }
 
 @media only screen and (max-device-width: 900px) {

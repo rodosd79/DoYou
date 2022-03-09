@@ -63,7 +63,7 @@ require_once "db/cadastrar_usuario.php";
 			</div>
 			<div class="input-field">
 				<i class="bi bi-lock-fill"></i>
-			<input type="password" name="senha" id="senha" placeholder="Senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{4,}$" title="A senha deve conter mínimo 4 dígitos, 1 letra maiúscula, 1 minúscula e 1 número"   onkeyup="validaSenha()" required/>
+			<input type="password" name="senha" id="senha" placeholder="Senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{4,}$" title="A senha deve conter ao menos 4 caracteres, incluindo 1 letra maiúscula, 1 minúscula e 1 número"   onkeyup="validaSenha()" required/>
 			</div>
 			<div class="input-field" id="pw2">
 				<i class="bi bi-shield-fill-check"></i>

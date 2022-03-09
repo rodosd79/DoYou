@@ -11,7 +11,9 @@
 
         $dia = $agora['mday'];
         $mes = strftime("%B");
+        $mes_nro = $agora['mon'];
         $ano = $agora['year'];
+
 
         
       // echo $horas . ":" . $minutos . ":" . $segundos . "<br>";

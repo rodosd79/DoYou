@@ -3,10 +3,20 @@
     require_once "conexao.php";
     session_start();
 
+    // cria um array de emails cadastrados
+    $sql = "SELECT email FROM usuario";
+    $result = mysqli_query($conn, $sql);
+    $emails=[];
+    while ($email = mysqli_fetch_assoc($result)){
+        $emails[] = $email['email'];
+    }
+ 
     if(isset($_POST['novo_usuario'])){
         if($_POST['senha']!=$_POST['senha2']){
             header("Location: cadastro.php?erro=1");    
-        }else{
+        }else if (in_array($_POST['email'], $emails)){
+            header("Location: cadastro.php?erro=2");
+        } else {
         $nome = $_POST['nome'];
         $email= $_POST['email'];
         $senha= md5($_POST['senha']);

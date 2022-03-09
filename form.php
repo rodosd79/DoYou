@@ -41,10 +41,10 @@
       
         <?php if($_REQUEST['tm']==1){?>
         <form  method="post" style="background-color: #D3DEBF">
-        <h1>Adicionar Receita</h1>
+        <h1>Inserir Receita</h1>
         <?php } else { ?>
-          <form  method="post" style="background-color: #EBE6BE">
-        <h1>Adicionar Despesa</h1>
+          <form  method="post" style="background-color: #D3DEBF">
+        <h1>Inserir Despesa</h1>
         <?php } ?>
           
         
@@ -69,7 +69,7 @@
           
         <div class="form-row justify-content-center">
         <div class="form-group  col-md-4">      
-            <button class="form-control btn btn-success" name="nova_movimentacao">Inserir</button>
+            <button class="form-control btn btn-success" name="nova_movimentacao">Confirmar</button>
             <input type="reset" class="form-control btn btn-secondary mt-2" value="Limpar dados">
             <a href="tabela.php?tt=0" class="form-control btn btn-light mt-2">Voltar</a>
         </div>

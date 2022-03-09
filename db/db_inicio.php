@@ -49,4 +49,9 @@ $sqlR = "SELECT valor, movimentacao.idTipoMov, nome, SUM(valor) as somaValor FRO
 
 $graficoR = mysqli_query($conn, $sqlR);
 
+
+
+  
+
+
 ?>

@@ -70,12 +70,13 @@ if (!isset($_SESSION['nome'])) {
     <!-- AREA 1 = Acesso rápido -->
         <div class="d-flex container flex-column bgPerso my-4 p-3">
             <div class="d-flex flex-md-nowrap flex-wrap">
-            <div class="order-md-0 order-2 flex-fill d-flex justify-content-between mr-2 mt-1 align-items-center">
+            <div class="order-md-0 order-2 flex-fill d-flex justify-content-between mr-2 mt-1 align-items-center ">
                
-                <div class="d-flex">
+                <div class="d-flex border border-success rounded py-4 px-2">
                     <h5 class="mb-0 mx-1"> <strong class="DoYou">Saldo:</strong></h5>
                     <h5 class="mb-0">R$ <?php echo $saldo; ?></h5>
                 </div>
+                <h5 class="mb-0 mx-1"> <strong class="DoYou">Inserir</strong></h5>
             </div>
             <div class="order-md-0 order-1 borda-left pl-md-2 py-1 d-block d-flex mb-2">
             <a href="form.php?tm=1" data-toggle="tooltip" data-placement="bottom" title="Adicionar receita" class="btn btnPerso">
@@ -121,9 +122,11 @@ if (!isset($_SESSION['nome'])) {
                             <a href="blog_post.php?id=<?php echo $b['idPost']; ?>" class="linkBlog d-flex py-2">
                                 <img src="<?php echo $b['imagem'] ?>" alt="<?php echo $b['alt_img'] ?>" style="width:10vw; height: 8vw; margin-right: 5px" >
                                 <?php echo $b['titulo'] ?>
-                                <br>
+                             
                             </a>
-                        </div>
+                            <p><small class="text-muted font-italic"><?php echo $b['autor']?></small>
+                    </p>
+                    </div>
                     <?php } ?>
                 </div>
             </div>

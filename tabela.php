@@ -34,10 +34,11 @@ if (!isset($_SESSION['nome'])) {
                 <div class="d-flex flex-md-nowrap flex-wrap">
                 <div class="order-md-0 order-2 flex-fill d-flex justify-content-between mr-2 mt-1 align-items-center">
                 
-                    <div class="d-flex">
+                    <div class="d-flex border border-success rounded py-4 px-2">
                         <h5 class="mb-0 mx-1"> <strong class="DoYou">Saldo:</strong></h5>
                         <h5 class="mb-0">R$ <?php echo $saldo; ?></h5>
                     </div>
+                    <h5 class="mb-0 mx-1"> <strong class="DoYou">Inserir</strong></h5>
                 </div>
                 <div class="order-md-0 order-1 borda-left pl-md-2 py-1 d-block d-flex mb-2">
                 <a href="form.php?tm=1" data-toggle="tooltip" data-placement="bottom" title="Adicionar receita" class="btn btnPerso">

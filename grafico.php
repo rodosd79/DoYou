@@ -1,5 +1,6 @@
 <?php 
-require_once "db/db_inicio.php";
+
+require_once "db/db_graficos.php";
 if (!isset($_SESSION['nome'])) {
     header("location: login.php");
 }
@@ -22,33 +23,7 @@ if (!isset($_SESSION['nome'])) {
     <!-- Grafico -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Categoria', 'Dinheiro'],
-        //   Foreach de despesa
-          <?php foreach ($graficoD as $g){ ?>
-            ['<?php echo $g['nome'] . " (Despesa)" ?>', <?php echo $g['somaValor']; ?>],
-          <?php } ?>
-        //   Foreach de receita
-          <?php foreach ($graficoR as $g){ ?>
-            ['<?php echo $g['nome'] . " (Receita)" ?>', <?php echo $g['somaValor']; ?>],
-          <?php } ?>
-        ]);
-
-        var options = {
-          title: 'My Daily Activities',
-          pieHole: 0.4,
-          colors: ['#00d863', '#030229', '#1B5937', '#00A64B', '#2C2975'],
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('graf'));
-        chart.draw(data, options);
-      }
-      
-
-      google.load("visualization","1", {packages:['corechart']});
+        google.load("visualization","1", {packages:['corechart']});
         //chamada da função
         google.setOnLoadCallback(drawChart);
 
@@ -56,24 +31,58 @@ if (!isset($_SESSION['nome'])) {
         function drawChart(){
         //variável matriz
         var data =google.visualization.arrayToDataTable([
-            ['Meses', 'Receitas', 'Despesas'],
-            ['Janeiro', 1000, 800],
-            ['Fevereiro', 1200, 600],
-            ['Março', 900, 750],
-            ['Abril', 2500, 1500]
+            ['Entradas e Saídas', 'R$', { role: 'style' } ],
+            ['Receitas', <?php echo $rece[0]?>, 'color: blue'],
+            ['Despesas', <?php echo $desp[0]?>, 'color: red'],
+            
         ]);
         //opções 
-        var options ={title: 'Rendimento',
-                    vAxis:{title:'Meses', titleTextStyle:{color:'red'}}
+        var options ={title: 'Entradas e Saídas do Mês',
+            viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
                     };
         //cria objeto pieChart e recebe por parâmetro a div onde será exibido
         var barras = new google.visualization.BarChart(document.getElementById('barras_div'));
         //criar o desenho
         barras.draw(data,options);
         }
-       
 
-    </script>
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawColColors);
+
+        function drawColColors() {
+     
+		var data = google.visualization.arrayToDataTable([
+         ['Categoria', 'R$'],
+
+         <?php foreach ($graf as $g){ ?>
+
+            ['<?php echo $g['nome']?>', <?php echo $g['somaValor'] ?>],
+
+            <?php } ?>
+        ]);
+       var options = {
+        title: 'Despesas por Categorias',
+        colors: ['#9575cd', '#33ac71'],
+        hAxis: {
+          title: 'Categorias',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Valores gastos'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('graf'));
+      chart.draw(data, options);
+    }
+        </script>
     <!--  -->
 </head>
 <body>
@@ -92,10 +101,11 @@ if (!isset($_SESSION['nome'])) {
             <div class="d-flex flex-md-nowrap flex-wrap">
             <div class="order-md-0 order-2 flex-fill d-flex justify-content-between mr-2 mt-1 align-items-center">
                
-                <div class="d-flex">
+                <div class="d-flex border border-success rounded py-4 px-2">
                     <h5 class="mb-0 mx-1"> <strong class="DoYou">Saldo:</strong></h5>
-                    <h5 class="mb-0">R$ <?php echo $saldo; ?></h5>
+                    <h5 class="mb-0">R$ <?php echo $saldo; ?> </h5>
                 </div>
+                <h5 class="mb-0 mx-1"> <strong class="DoYou">Inserir</strong></h5>
             </div>
             <div class="order-md-0 order-1 borda-left pl-md-2 py-1 d-block d-flex mb-2">
             <a href="form.php?tm=1" data-toggle="tooltip" data-placement="bottom" title="Adicionar receita" class="btn btnPerso">
@@ -123,7 +133,9 @@ if (!isset($_SESSION['nome'])) {
                         <a href="tabela.php?tt=0" class="nav-link">Geral</a>
                         <a href="tabela.php?tt=1" class="nav-link">Receitas</a>
                         <a href="tabela.php?tt=2" class="nav-link">Despesas</a>
+                    
                         <a href="grafico.php" class="nav-link">Gráficos</a>
+                       
                        
                     </nav>
                 </div>
@@ -137,6 +149,7 @@ if (!isset($_SESSION['nome'])) {
             <div class="d-flex flex-column bgPerso p-3 mr-md-4">
                
                 <div id="barras_div" class="w-100 h-100"></div>
+                
         
             </div>
             <!-- Grafico2 -->
